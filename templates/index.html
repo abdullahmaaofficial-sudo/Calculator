@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="/static/style.css"> -->
+    <title>Calculator</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="inp-box">
+                <p id="user-inp"></p>
+            </div>
+            <div class="button-box">
+                <div class="left-btn-box">
+                    <button id="lbtn-de" class="btn">Del</button>
+                    <button id="lbtn-ac" class="btn">AC</button>
+                    <button id="lbtn-d" class="btn">/</button>
+
+                    <button id="num1" class="nbtn">1</button>
+                    <button id="num2" class="nbtn">2</button>
+                    <button id="num3" class="nbtn">3</button>
+                    <button id="num4" class="nbtn">4</button>
+                    <button id="num5" class="nbtn">5</button>
+                    <button id="num6" class="nbtn">6</button>
+                    <button id="num7" class="nbtn">7</button>
+                    <button id="num8" class="nbtn">8</button>
+                    <button id="num9" class="nbtn">9</button>
+                    
+                    <div class="bottom-btns">
+                        <button id="num0" class="nbtn">0</button>
+                        <button id="num-p" class="nbtn">.</button>
+                    </div>
+                </div>
+                <div class="right-btn-box">
+                    <button id="rbtn-m" class="btn">*</button>
+                    <button id="rbtn-s" class="btn">-</button>
+                    <button id="rbtn-a" class="btn">+</button>
+                    <div class="last-btn">
+                        <button id="rbtn-e" class="btn">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static',filename='script.js') }}"></script>
+</body>
+</html>

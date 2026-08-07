@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(0,0,0,0.8);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: rgba(255,255,255,0.4);
+    padding: 1.7rem 1.4rem;
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.4);
+    border-radius: 12px;
+}
+
+#user-inp{
+    padding: 0.9rem 0.5rem;
+    font-size: 1.2rem;
+    height: 7vh;
+    font-weight: 750;
+    color: rgba(0,0,0,0.8);
+    background-color: rgba(255, 255, 255, 0.422);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 0.8rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.button-box{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.left-btn-box{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 8px;
+}
+.left-btn-box > .bottom-btns{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column: 1/-1;
+  gap: 8px;
+}
+
+.right-btn-box{
+    display: grid;
+    grid-template-columns: 80px;
+    grid-template-rows: repeat(3,1fr) 2fr;
+    gap: 8px;
+}
+
+.right-btn-box > .last-btn{
+    grid-row: span 2;
+}
+
+.btn ,.nbtn{
+    font-size: 1.3rem;
+    font-weight: 750;
+    padding: 1.3rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 6px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    background-color: rgba(109, 139, 208, 1);
+    transition: all 0.1s ease;
+}
+
+.nbtn:hover{
+    background-color: rgba(109, 139, 208, 0.8);
+    border: 1px solid rgba(0,0,0,0.4) 
+}
+
+.nbtn:active{
+    background-color: rgba(109, 139, 208, 0.4);
+}
+
+.btn{
+    background-color: rgba(78, 153, 244, 1);
+}
+.btn:hover{
+    background-color: rgba(78, 153, 244, 0.8);
+    border: 1px solid rgba(0,0,0,0.4) 
+}
+
+.btn:active{
+    background-color: rgba(78, 153, 244, 0.4);
+
+}
+
+#lbtn-de,#lbtn-ac{
+    background-color: rgba(214, 103, 13, 1);
+}
+#lbtn-de:hover,#lbtn-ac:hover{
+    background-color: rgba(214, 103, 13, 0.8);
+    border: 1px solid rgba(0,0,0,0.4) 
+}
+#lbtn-de:active,#lbtn-ac:active{
+    background-color: rgba(214, 103, 13, 0.4);
+}
+#rbtn-e{
+    height: 100%;
+    width: 100%;
+}
+
+
+@media (max-width:480px) {
+
+    #user-inp{
+        height: 8vh;
+    }
+}

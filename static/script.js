@@ -25,12 +25,17 @@ NumButtons.forEach(btn => {
 NotNumBtn.forEach(btn => {
     btn.addEventListener('click', () => {
         const content = btn.textContent;
-       if (OperatorArray.includes(content) && bottom_content.length !== 0 && bottom_content !== '.' && operator.length === 0){
+       if (OperatorArray.includes(content) && bottom_content !== '.' && operator.length === 0){
+        if (content === '-' && bottom_content.length === 0) {
+            bottom_content = '-'
+            UserOut.textContent = bottom_content;
+        } else if (bottom_content.length !== 0){  
             operator = content;
             top_exp = bottom_content + operator;
             TopOut.textContent = top_exp;
             bottom_content = "";
             UserOut.textContent = bottom_content;
+        }
        }else if (operator.length === 1){ 
         last_op = content !== '=' ? content : '';
         Answer(); 

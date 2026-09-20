@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 body{
@@ -18,25 +19,70 @@ body{
     padding: 1.7rem 1.4rem;
     box-shadow: 2px 3px 6px rgba(0,0,0,0.4);
     border-radius: 12px;
+    width: 380px; 
+    max-width: 90vw;
 }
 
-#user-inp{
-    padding: 0.9rem 0.5rem;
-    font-size: 1.2rem;
-    height: 7vh;
-    font-weight: 750;
-    color: rgba(0,0,0,0.8);
+.inp-box {
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+    height: 80px;
     background-color: rgba(255, 255, 255, 0.422);
     border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 5px;
     box-shadow: 1px 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 0.8rem;
-    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: end;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    border-radius: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+    direction: rtl;
 }
 
+/* 1. Set the height and width of the scrollbar */
+.inp-box::-webkit-scrollbar {
+    height: 6px; /* Height for horizontal scrollbar */
+}
+
+/* 2. Track (background path) */
+.inp-box::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+/* 3. Handle (draggable bar) */
+.inp-box::-webkit-scrollbar-thumb {
+    background: rgba(78, 153, 244, 0.6); /* Matches your blue button color */
+    border-radius: 10px;
+}
+
+/* 4. Handle on hover */
+.inp-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(78, 153, 244, 0.9);
+}
+
+/* Firefox standard scrollbar support */
+.inp-box {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(78, 153, 244, 0.6) rgba(0, 0, 0, 0.05);
+}
+
+#top-out, #user-out {
+    white-space: nowrap;
+    direction: ltr;
+    text-align: right;
+    display: inline-block;
+    min-width: max-content;
+}
+
+#user-out {
+    font-size: 1.8rem;
+    font-weight: 750;
+    color: rgba(0,0,0,0.8);
+}
 .button-box{
     display: flex;
     justify-content: space-between;
@@ -114,12 +160,4 @@ body{
 #rbtn-e{
     height: 100%;
     width: 100%;
-}
-
-
-@media (max-width:480px) {
-
-    #user-inp{
-        height: 8vh;
-    }
 }

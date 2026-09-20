@@ -1,6 +1,5 @@
 const TopOut = document.getElementById('top-out');
 const UserOut = document.getElementById('user-out');
-const AllButtons = document.getElementsByTagName('button');
 const NumButtons = Array.from(document.getElementsByClassName('nbtn'));
 const NotNumBtn = Array.from(document.getElementsByClassName('btn'));
 
@@ -26,19 +25,19 @@ NotNumBtn.forEach(btn => {
     btn.addEventListener('click', () => {
         const content = btn.textContent;
        if (OperatorArray.includes(content) && bottom_content !== '.' && operator.length === 0){
-        if (content === '-' && bottom_content.length === 0) {
-            bottom_content = '-'
-            UserOut.textContent = bottom_content;
-        } else if (bottom_content.length !== 0){  
-            operator = content;
-            top_exp = bottom_content + operator;
-            TopOut.textContent = top_exp;
-            bottom_content = "";
-            UserOut.textContent = bottom_content;
-        }
-       }else if (operator.length === 1){ 
-        last_op = content !== '=' ? content : '';
-        Answer(); 
+            if (content === '-' && bottom_content.length === 0) {
+                bottom_content = '-'
+                UserOut.textContent = bottom_content;
+            } else if (bottom_content.length !== 0){  
+                operator = content;
+                top_exp = bottom_content + operator;
+                TopOut.textContent = top_exp;
+                bottom_content = "";
+                UserOut.textContent = bottom_content;
+            }
+       }else if (operator.length === 1  && !(['Del','AC'].includes(content))){ 
+            last_op = content !== '=' ? content : '';
+            Answer(); 
     } 
     });
 });
@@ -99,19 +98,12 @@ function Answer(){
         let ContentArray = [top_exp.slice(0,-1),operator,bottom_content]
         console.log("Number Array: ",ContentArray)
         if (ContentArray.length === 3 && ContentArray.at(-1) !== ''){
-            // SolveExpression(exp = top_exp + bottom_content).then(result => {
-            //     top_exp = '';
-            //     TopOut.textContent = top_exp;
-            //     bottom_content = result;
-            //     UserOut.textContent = bottom_content;
-            //     operator = '';
-            // });
             const result = eval(x = top_exp + bottom_content)
-            top_exp = ''
-            TopOut.textContent = top_exp;
             operator = last_op;
-            bottom_content = operator ? result + operator : result;
-            UserOut.textContent = bottom_content;
+            top_exp = operator ? result + operator : '';
+            bottom_content = operator ? '' : result;
+            TopOut.textContent = top_exp;
+            UserOut.textContent = bottom_content
             last_op = ''
         }
     }

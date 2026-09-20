@@ -67,7 +67,7 @@ document.addEventListener('keydown', (event) => {
 });
 
 function DeleteWord(){
-    if (bottom_content.length !== 0){
+    if (bottom_content.length !== 0 && typeof(bottom_content) === 'string'){
         if (bottom_content.at(-1) === operator){
             operator = '';
         }

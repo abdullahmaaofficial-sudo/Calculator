@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     padding: 0;
     margin: 0;
@@ -122,3 +123,168 @@ body{
         height: 8vh;
     }
 }
+=======
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-color: rgba(0,0,0,0.8);
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: rgba(255,255,255,0.4);
+    padding: 1.7rem 1.4rem;
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.4);
+    border-radius: 12px;
+    width: 380px; 
+    max-width: 90vw;
+}
+
+.inp-box {
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.422);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    border-radius: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+    direction: rtl;
+}
+
+/* 1. Set the height and width of the scrollbar */
+.inp-box::-webkit-scrollbar {
+    height: 6px; /* Height for horizontal scrollbar */
+}
+
+/* 2. Track (background path) */
+.inp-box::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+/* 3. Handle (draggable bar) */
+.inp-box::-webkit-scrollbar-thumb {
+    background: rgba(78, 153, 244, 0.6); /* Matches your blue button color */
+    border-radius: 10px;
+}
+
+/* 4. Handle on hover */
+.inp-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(78, 153, 244, 0.9);
+}
+
+/* Firefox standard scrollbar support */
+.inp-box {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(78, 153, 244, 0.6) rgba(0, 0, 0, 0.05);
+}
+
+#top-out, #user-out {
+    white-space: nowrap;
+    direction: ltr;
+    text-align: right;
+    display: inline-block;
+    min-width: max-content;
+}
+
+#user-out {
+    font-size: 1.8rem;
+    font-weight: 750;
+    color: rgba(0,0,0,0.8);
+}
+.button-box{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.left-btn-box{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 8px;
+}
+.left-btn-box > .bottom-btns{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column: 1/-1;
+  gap: 8px;
+}
+
+.right-btn-box{
+    display: grid;
+    grid-template-columns: 80px;
+    grid-template-rows: repeat(3,1fr) 2fr;
+    gap: 8px;
+}
+
+.right-btn-box > .last-btn{
+    grid-row: span 2;
+}
+
+.btn ,.nbtn{
+    font-size: 1.3rem;
+    font-weight: 750;
+    padding: 1.3rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 6px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    color: black;
+    background-color: rgba(109, 139, 208, 1);
+    transition: all 0.1s ease;
+}
+
+.nbtn:hover{
+    background-color: rgba(109, 139, 208, 0.8);
+    border: 1px solid rgba(0,0,0,0.4) 
+}
+
+.nbtn:active{
+    background-color: rgba(109, 139, 208, 0.4);
+}
+
+.btn{
+    background-color: rgba(78, 153, 244, 1);
+}
+.btn:hover{
+    background-color: rgba(78, 153, 244, 0.8);
+    border: 1px solid rgba(0,0,0,0.4) 
+}
+
+.btn:active{
+    background-color: rgba(78, 153, 244, 0.4);
+
+}
+
+#lbtn-de,#lbtn-ac{
+    background-color: rgba(214, 103, 13, 1);
+}
+#lbtn-de:hover,#lbtn-ac:hover{
+    background-color: rgba(214, 103, 13, 0.8);
+    border: 1px solid rgba(0,0,0,0.4) 
+}
+#lbtn-de:active,#lbtn-ac:active{
+    background-color: rgba(214, 103, 13, 0.4);
+}
+#rbtn-e{
+    height: 100%;
+    width: 100%;
+}
+>>>>>>> ccec5af53ea52192da2951b0dba365c58e184710
